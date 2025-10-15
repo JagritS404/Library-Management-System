@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Books</h2>
+  <a href="/books/export">Export to Excel</a>
+  <table>
+    <tr><th>Title</th><th>Author</th><th>ISBN</th><th>Available</th></tr>
+    {% for b in books %}
+      <tr>
+        <td><a href="/books/{{b.id}}">{{b.title}}</a></td>
+        <td>{{b.author}}</td>
+        <td>{{b.isbn}}</td>
+        <td>{{b.copies_available}} / {{b.copies_total}}</td>
+      </tr>
+    {% else %}
+      <tr><td colspan="4">No books found</td></tr>
+    {% endfor %}
+  </table>
+{% endblock %}

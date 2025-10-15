@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>User Dashboard - {{ user.name or user.email }}</h2>
+  <h3>Borrowed</h3>
+  <ul>
+    {% for item in borrows %}
+      <li>{{item.book.title}} - Issued: {{item.borrow.issued_at}} - Returned: {{item.borrow.returned_at}}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

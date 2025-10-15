@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+python-multipart
+jinja2
+aiofiles
+sqlmodel
+authlib
+python-jose[cryptography]
+passlib[bcrypt]
+pandas
+openpyxl
+email-validator
+python-dotenv

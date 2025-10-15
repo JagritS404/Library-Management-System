@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Admin Dashboard</h2>
+  <p>Users: {{ users|length }}</p>
+  <p>Books: {{ books|length }}</p>
+  <p>Borrowed: {{ borrows|length }}</p>
+
+  <h3>Upload Books (Excel)</h3>
+  <form action="/books/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".xlsx" />
+    <button type="submit">Upload</button>
+  </form>
+{% endblock %}
